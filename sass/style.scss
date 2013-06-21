@@ -1,0 +1,127 @@
+$color-red :#A52449;
+$color-white:#ffffff;
+
+* {transition:color .3s ease-in-out; -webkit-transition:color .3s ease-in-out; -moz-transition:color .3s ease-in-out;}
+body {padding:0;}
+.hidden{display:none;}
+.questions, .apply, .loading{
+  text-align: center;
+  padding:1em;
+}
+.loading p{
+  font-style: italic;
+}
+.question{
+  a{
+    border-bottom:1px solid;
+    &:hover{
+      text-decoration: none;
+    }
+  }
+  ul{
+    text-align: left;
+  }
+}
+
+.answers, .apply, .tooltip-content{
+  a{
+    display:block;
+    margin:0 auto 8px;
+    color:$color-white;
+    &:hover{
+      text-decoration: none;
+      color:$color-white;
+    }
+    &:visited{
+      color:$color-white;
+    }
+    &:active{
+      color:$color-white;
+    }
+  }
+}
+
+.answer{
+  position:relative;
+  margin:0 auto;
+  width:350px;
+}
+.info{
+  width:32px;
+  height:32px;
+  position: absolute;
+  right:0;
+  top:15%;
+  img{
+    width:100%;
+  }
+}
+.tooltip{
+  width: 50px;
+  position: absolute;
+  top: 6px;
+  right: 0px;
+  padding: 4px 0;
+  background: rgb(241, 242, 242);
+  color: rgb(100, 121, 127);
+  cursor: pointer;
+  font-family: Georgia;
+  font-style: italic;
+  font-weight: bold;
+  border:1px solid rgb(209, 211, 212);
+  border-left:0;
+  -webkit-box-shadow:inset 0px 1px 2px rgb(30,30,30);
+  -moz-box-shadow:inset 0px 1px 2px rgb(30,30,30);
+  box-shadow:inset 0px 1px 2px rgb(30,30,30);
+  -webkit-border-top-right-radius:25px;
+  -webkit-border-bottom-right-radius:25px;
+  -moz-border-top-right-radius:25px;
+  -moz-border-bottom-right-radius:25px;
+  border-top-right-radius: 25px;
+  border-bottom-right-radius: 25px;
+  -webkit-transition: .2s ease-in-out;
+  -moz-transition: .2s ease-in-out;
+  transition: .2s ease-in-out;
+  &:hover{
+    color:rgb(254,254,254);
+    width:70px;
+    right: -20px;
+    background:rgb(100, 121, 127);
+    
+  }
+}
+.tooltip-wrapper{
+  position:absolute;
+  width:100%;
+  top:0;
+  left:0;
+  height:100%;
+  background:rgba(0,0,0,.2);
+}
+.tooltip-content{
+  background: rgb(241, 242, 242);
+  border:1px solid rgb(209, 211, 212);
+  color: rgb(100, 121, 127);
+  padding:2em;
+  -webkit-border-radius:4px;
+  -moz-border-radius:4px;
+  border-radius:4px;
+  margin:10% auto 0;
+  width:50%;
+  text-align: left;
+  h3{
+    margin-bottom:1em;
+  }
+  a, a:visited, a:hover{
+    display:inline;
+    color:$color-red;
+  }
+  a.button{
+    color:$color-white;
+    display:block;
+    text-align: center;
+  }
+  div{
+    margin-bottom:1em;
+  }
+}

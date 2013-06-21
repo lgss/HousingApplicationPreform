@@ -1,0 +1,60 @@
+<!doctype html>
+<html class="no-js" lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Housing Application Form: Pre-questions</title>
+	<meta name="description" content="">
+	<meta name="author" content="">
+	<meta name="HandheldFriendly" content="True">
+	<meta name="MobileOptimized" content="320">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="css/base.css">
+	<link rel="stylesheet" href="css/style.css">
+</head>
+<!--[if IE 7]><body class="ie"><![endif]-->
+<!--[if IE 8]><body class="ie"><![endif]-->
+<!--[if IE 9]><body class="ie"><![endif]-->
+<!--[if !IE]>-->
+<body>
+	<!--<![endif]-->
+	<div class="loading" data-bind="visible: !ready()">
+		<p>Loading...</p>
+		<img src="images/loading.gif" alt="Loading."/>
+	</div>
+	<div class="hidden" id="container">
+		<div data-bind="foreach: questions" class="questions">
+			<div data-bind="visible: $parent.currentQ() == index(), attr: { id: 'q' + index() }" class="question">
+				<p data-bind="html: content"></p>
+				<div data-bind="foreach: answers" class="answers">
+					<div class="answer">
+						<a href="#" data-bind="click: $root.nextQ, attr: { href: $parent.id }" class="button red"><span data-bind="html: content"></span>
+						</a>
+						<div class="tooltip" data-bind="visible: tooltip, click: toggleTooltip">
+							<span>i</span>
+						</div>
+					</div>
+				</div>
+				<div data-bind="foreach: answers">
+					<div class="tooltip-wrapper" data-bind="visible: tooltipOn">
+						<div class="tooltip-content box-shadow">
+							<div data-bind="html: tooltip"></div>
+							<a href="#" class="red button" data-bind="click: toggleTooltip">Close</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="ie-back" data-bind="click: prevQ, visible: prevQuestions().length > 0">
+		<div class="back-button">
+			&lt;
+			<p>Back</p>
+		</div>
+		
+	</div>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.1/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')</script>
+<script type='text/javascript' src='js/knockout-2.2.0.js'></script>
+<script type='text/javascript' src="js/site.js"></script>
+</body>
+</html>
